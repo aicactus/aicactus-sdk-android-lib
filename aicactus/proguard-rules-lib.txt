@@ -1,3 +1,0 @@
--keepclassmembers class io.aicactus.sdk.** extends io.aicactus.sdk.ValueMap {
-  <init>(java.util.Map);
-}
