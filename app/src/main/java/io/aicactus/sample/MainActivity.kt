@@ -15,6 +15,8 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
 import io.aicactus.sdk.AicactusSDK
+import io.aicactus.sdk.Properties
+import io.aicactus.sdk.Traits
 
 import io.github.inflationx.viewpump.ViewPumpContextWrapper
 
@@ -34,7 +36,7 @@ class MainActivity : Activity() {
 
     @OnClick(R.id.action_track_b)
     fun onButtonBClicked() {
-        AicactusSDK.with(this).track("Button B Clicked")
+        AicactusSDK.with(this).track("Button B Clicked", Properties().putTitle("B").putPrice(10.0))
     }
 
     @OnClick(R.id.action_identify)
@@ -43,7 +45,13 @@ class MainActivity : Activity() {
         if (isNullOrEmpty(id)) {
             Toast.makeText(this, R.string.id_required, Toast.LENGTH_LONG).show()
         } else {
-            AicactusSDK.with(this).identify(id)
+            AicactusSDK.with(this).screen("")
+            AicactusSDK.with(this).identify(
+                id,
+                Traits().putName("Jack London").putEmail("jack@aicactus.ai")
+                    .putPhone("555-444-3333"),
+                null
+            )
         }
     }
 
