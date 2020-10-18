@@ -42,7 +42,6 @@ override fun onCreate() {
             .trackApplicationLifecycleEvents()
             // Enable this to record screen views automatically!
             .recordScreenViews()
-            .logLevel(AicactusSDK.LogLevel.VERBOSE)
             .build()
 
         // Set the initialized instance as a globally accessible instance.
@@ -119,7 +118,6 @@ val config = AicactusSDK.Builder(this, AICACTUS_WRITE_KEY)
     .flushInterval(10, TimeUnit.SECONDS)
     // Enable this to record screen views automatically!
     .recordScreenViews()
-    .logLevel(AicactusSDK.LogLevel.VERBOSE)
     .build()
 ```
 
