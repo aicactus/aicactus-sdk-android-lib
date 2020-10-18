@@ -1,3 +1,2 @@
-include 'aicactus'
-include 'aicactus-tests'
-include 'aicactus-samples:aicactus-sample'
+include ':app'
+rootProject.name = "TestAiCactus"
